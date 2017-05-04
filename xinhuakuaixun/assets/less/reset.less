@@ -1,0 +1,66 @@
+//背景色
+@bg_color:#f7f8fa;
+@bg_color_gray:rgb(247,248,250);
+@bg_color_opacity_block:rgba(48,48,48,0.8); 
+@bg_color_opacity_gray:rgba(170,170,170,0.5);
+
+//字体大小
+@font_size7:0.07rem;
+@font_size12:0.12rem;
+@font_size13:0.13rem;
+@font_size14:0.14rem;
+@font_size15:0.15rem;
+@font_size16:0.16rem;
+@font_size18:0.18rem;
+@font_size24:0.24rem;
+
+//文字颜色
+@font_color_bule:rgb(38,147,255);
+@font_color_lightBlock:rgb(72,74,77);
+@font_color_gray:rgb(170,170,170);
+@font_color_green:rgb(9,187,7);
+@font_color_red:rgb(226,47,41);
+@font_color_white:rgb(255,255,255);  
+
+//边框颜色
+@border_color_gray:rgb(235,235,235);
+@border_color_lightGray:rgb(229,229,229);
+@border_color_bule:rgb(38,147,255);
+
+//行高
+@line_height16:0.16rem;
+@line_height60:0.6rem;
+
+//padding
+@padding5:0.05rem;
+@padding10:0.1rem;
+@padding15:0.15rem;
+@padding16:0.16rem;
+@padding20:0.2rem;
+@padding24:0.24rem;
+
+//margin
+@margin5:0.05rem;
+@margin10:0.1rem;
+@margin15:0.15rem;
+@margin20:0.2rem;
+
+body,html{
+    background: @bg_color;
+    padding-top: 20px;    
+} 
+.mui-bar-tab .mui-tab-item.mui-active{
+    color: @font_color_bule;
+}
+.mui-bar-nav{
+    box-shadow: none;
+}
+header:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 44px;
+    left: 0;
+    background: @border_color_lightGray;
+}
