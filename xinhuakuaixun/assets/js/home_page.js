@@ -10,7 +10,7 @@ if(window.plus) {
 var wc = null;
 var ws;
 
-//		底部导航的 页面切换
+//	底部导航的 页面切换
 function plusReady() {
 	plus.screen.lockOrientation('portrait-primary');
 	var subpage = ['home.html', 'import_news.html', 'market.html'];
@@ -35,26 +35,34 @@ function plusReady() {
 		if(tag == activeTab) {
 			return
 		}
-		
-		if($(this).children().find('img').attr('src').indexOf('tab-no-') != -1) {
-			$(this).children().find('img').attr('src', $(this).children().find('img').attr('src').replace('tab-no-', 'tab-'));
-			$.each($(this).siblings(), function(index, dom) {
-				if($(dom).children().find('img').attr('src').indexOf('tab-no-') == -1) {
-					$(dom).children().find('img').attr('src', $(dom).children().find('img').attr('src').replace('tab-', 'tab-no-'));
-				}
-			})
+		tabInit();
+		if(tag == 'home.html'){
+			$('#kx').attr('xlink:href','#mui-icon-flash_active');
+			$('#header_title').html('快讯');
+			$('#news_speech').css({'display':'block'});
+		}else if(tag == 'import_news.html'){
+			$('#yw').attr('xlink:href','#mui-icon-news_active');
+			$('#header_title').html('要闻');
+			$('#news_speech').css({'display':'none'});
+		}else if(tag == 'market.html'){
+			$('#hq').attr('xlink:href','#mui-icon-market_active');
+			$('#header_title').html('行情');
+			$('#news_speech').css({'display':'none'});
 		}
-		
 		plus.webview.show(tag);
 		plus.webview.hide(activeTab);
 		activeTab = tag;
-		var xinhuaInformation = plus.webview.getWebviewById('xinHuaInformation.html');
-		xinhuaInformation.evalJS('stopVideo()')
 	})
 	ws = self;
 	ws.addEventListener("maskClick", function() {
 		wc.close("auto");
 	}, false);
+}
+
+function tabInit(){
+	$('#kx').attr('xlink:href','#mui-icon-flash');
+	$('#yw').attr('xlink:href','#mui-icon-news');
+	$('#hq').attr('xlink:href','#mui-icon-market');
 }
 
 //侧滑显示设置界面

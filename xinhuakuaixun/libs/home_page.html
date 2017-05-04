@@ -11,35 +11,50 @@
 
 	<body>
 		<!--头部导航-->
-		<header class="mui-bar mui-bar-nav set">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<header class="mui-bar mui-bar-nav">
+			<div class="user_info mui-pull-left" id='user_info'>
+				<svg class="icon" aria-hidden="true">
+	                <use xlink:href="#mui-icon-setting"></use>
+	            </svg>
+			</div>
 			<h1 class="mui-title" id='header_title'>快讯</h1>
-			
+			<div class="news_speech mui-pull-right" id='news_speech'>
+				<svg class="icon" aria-hidden="true">
+	                <use xlink:href="#mui-icon-speech"></use>
+	            </svg>
+			</div>
 		</header>
 		<!--底部导航-->
 		<nav class="mui-bar mui-bar-tab">
 			<a class="mui-tab-item mui-active" data='home.html'>
-				<span class="mui-icon">
-			        <img src="img/tab-select5@2x.png" style="height: 1rem;"/>
-			    </span>
+				<div class="nav_logo">
+					<svg class="icon" aria-hidden="true">
+	                    <use xlink:href="#mui-icon-flash_active" id='kx'></use>
+	                </svg>
+				</div>
 				<span class="mui-tab-label">快讯</span>
 			</a>
 			<a class="mui-tab-item" data='import_news.html'>
-				<span class="mui-icon">
-			        <img src="img/tab-no-select6@2x.png" style="height: 1rem;"/>
-			    </span>
+				<div class="nav_logo">
+					<svg class="icon" aria-hidden="true">
+	                    <use xlink:href="#mui-icon-news" id='yw'></use>
+	                </svg>
+				</div>
 				<span class="mui-tab-label">要闻</span>
 			</a>
 			<a class="mui-tab-item" data='market.html'>
-				<span class="mui-icon">
-		         	<img src="img/tab-no-select7@2x.png" style="height: 1rem;"/>
-		        </span>
+				<div class="nav_logo">
+					<svg class="icon" aria-hidden="true">
+	                    <use xlink:href="#mui-icon-market" id='hq'></use>
+	                </svg>
+				</div>
 				<span class="mui-tab-label">行情</span>
 			</a>
 		</nav>
 		
 		<script src="../src/js/common/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../src/js/common/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/common/iconfont.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../src/js/reset.min.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="../src/js/home_page.min.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="../assets/js/home_page.js" type="text/javascript" charset="utf-8"></script>

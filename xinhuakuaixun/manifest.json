@@ -104,9 +104,6 @@
         }
 	},
 	"plus": {
-	    "statusbar": {
-	        "immersed": true
-	    },
 		"splashscreen": {
 			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
 			"waiting": true
@@ -207,7 +204,8 @@
 					"assets/js/home_page.js",
 					"libs/home.html",
 					"src/js/common/jquery-2.1.0.min.js",
-					"src/js/common/mui.min.js"
+					"src/js/common/mui.min.js",
+					"src/js/common/iconfont.min.js"
 				],
 				"refer": [
 					"libs/import_news.html",
@@ -216,6 +214,14 @@
 				"priority": 0
 			},
 			"libs/home.html": {
+				"resources": [
+					"src/css/mui.min.css",
+					"src/css/reset.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"libs/import_news.html": {
 				"resources": [
 					"src/css/mui.min.css",
 					"src/css/reset.min.css"
