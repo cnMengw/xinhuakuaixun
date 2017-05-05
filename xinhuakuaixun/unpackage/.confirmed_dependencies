@@ -1,28 +1,53 @@
 {
-	"libs/home_page.html": {
-		"resources": [
-			"src/fonts/mui.ttf",
-			"src/css/home_page.min.css",
-			"src/js/reset.min.js",
-			"src/js/mui.min.js",
-			"src/js/home_page.min.js",
-			"src/css/mui.min.css",
-			"src/css/reset.min.css",
-			"assets/js/home_page.js",
-			"libs/home.html",
-			"src/js/common/jquery-2.1.0.min.js",
-			"src/js/common/mui.min.js"
-		],
-		"refer": [
-			"libs/import_news.html",
-			"libs/market.html",
-			"libs/home.html"
-		]
-	},
-	"libs/home.html": {
-		"resources": [
-			"src/css/mui.min.css",
-			"src/css/reset.min.css"
-		]
-	}
+  "libs/home_page.html": {
+    "resources": [
+      "src/fonts/mui.ttf",
+      "src/css/home_page.min.css",
+      "src/js/reset.min.js",
+      "src/js/mui.min.js",
+      "src/js/home_page.min.js",
+      "src/css/mui.min.css",
+      "src/css/reset.min.css",
+      "assets/js/home_page.js",
+      "libs/home.html",
+      "src/js/common/jquery-2.1.0.min.js",
+      "src/js/common/mui.min.js",
+      "src/js/common/iconfont.min.js"
+    ],
+    "refer": [
+      "libs/import_news.html",
+      "libs/market.html",
+      "libs/home.html"
+    ]
+  },
+  "libs/home.html": {
+    "resources": [
+      "src/css/mui.min.css",
+      "src/css/reset.min.css"
+    ],
+    "refer": []
+  },
+  "libs/market.html": {
+    "resources": [
+      "src/css/market.min.css",
+      "src/css/mui.min.css",
+      "src/js/market.min.js",
+      "assets/js/market.js",
+      "src/js/market.js",
+      "src/js/common/jquery-2.1.0.min.js",
+      "src/js/common/mui.min.js",
+      "src/js/reset.min.js"
+    ],
+    "refer": []
+  },
+  "libs/import_news.html": {
+    "resources": [
+      "src/js/common/mui.pullToRefresh.material.js",
+      "src/js/common/mui.pullToRefresh.js",
+      "src/css/import_news.min.css",
+      "src/js/import_news.js",
+      "src/css/mui.min.css"
+    ],
+    "refer": []
+  }
 }

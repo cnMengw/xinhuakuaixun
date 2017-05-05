@@ -224,7 +224,25 @@
 			"libs/import_news.html": {
 				"resources": [
 					"src/css/mui.min.css",
-					"src/css/reset.min.css"
+					"src/css/reset.min.css",
+					"src/js/common/mui.pullToRefresh.material.js",
+					"src/js/common/mui.pullToRefresh.js",
+					"src/css/import_news.min.css",
+					"src/js/import_news.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"libs/market.html": {
+				"resources": [
+					"src/css/market.min.css",
+					"src/css/mui.min.css",
+					"src/js/market.min.js",
+					"assets/js/market.js",
+					"src/js/market.js",
+					"src/js/common/jquery-2.1.0.min.js",
+					"src/js/common/mui.min.js",
+					"src/js/reset.min.js"
 				],
 				"refer": [],
 				"priority": 0

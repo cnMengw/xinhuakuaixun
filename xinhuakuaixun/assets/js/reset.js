@@ -9,6 +9,7 @@
     };
     window.addEventListener('resize', setRem, false);
     setRem();
+//  console.log('rem执行完毕');
 })();
 
 //ajax请求

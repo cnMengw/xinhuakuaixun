@@ -8,11 +8,122 @@
 		<link rel="stylesheet" type="text/css" href="../src/css/reset.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../src/css/import_news.min.css"/>
 	</head>
-
-	<body>
 		
-		<script src="../src/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div class="mui-content">
+		    <div id="slider" class="mui-slider mui-fullscreen">
+		    	<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+		    		<div class="mui-scroll marketControl">
+		    			<a class="mui-control-item mui-active" href="#item1">沪深</a>
+		    			<a class="mui-control-item" href="#item2">自选</a>
+		    			<a class="mui-control-item" href="#item3">新闻</a>
+		    			<a class="mui-control-item" href="#item4">公告</a>
+		    			<a class="mui-control-item" href="#item3">新闻</a>
+		    			<a class="mui-control-item" href="#item4">公告</a>
+		    		</div>
+		    	</div>
+		    	<div class="banner">
+		    		<div id="bannerslider" class="mui-slider" >
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="../images/yuantiao.jpg">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/shuijiao.jpg">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/muwu.jpg">
+								</a>
+							</div>
+							<!-- 第三张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/cbd.jpg">
+								</a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/yuantiao.jpg">
+								</a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="../images/shuijiao.jpg">
+								</a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+		    	</div>
+		    	<div class="mui-slider-group news">
+			    	<div id="item1" class="mui-slider-item mui-control-content mui-active">
+			    		<div id="scroll1" class="mui-scroll-wrapper">
+			    			<div class="mui-scroll">						    
+			    			</div>
+			    		</div>
+			    		
+			    	</div>
+			    	<div id="item2" class="mui-slider-item mui-control-content">
+			    		<div id="scroll2" class="mui-scroll-wrapper">
+			    			<div class="mui-scroll">
+			    				<ul class="mui-table-view">
+			    				</ul>
+			    			</div>
+			    			
+			    		</div>
+			    		
+			    	</div>
+			    	<div id="item3" class="mui-slider-item mui-control-content">
+			    		<div id="scroll3" class="mui-scroll-wrapper">
+			    			<div class="mui-scroll">
+			    				<ul class="mui-table-view allnews">
+			    					<!--<li class="mui-table-view-cell announcecon" ancurl="">
+						            	<label>逐一解答媒体质疑事项 </label>
+						            	<div>
+						            		<span class="mui-col-xs-3">时间</span>
+						            	</div>
+						           </li>-->
+			    				</ul>
+			    				
+			    			</div>
+			    			
+			    		</div>
+			    		
+			    	</div>
+			    	<div id="item4" class="mui-slider-item mui-control-content">
+			    		<div id="scroll4" class="mui-scroll-wrapper">
+			    			<div class="mui-scroll">
+			    				<ul class="mui-table-view gonggao">
+			    				</ul>
+			    				
+			    			</div>
+			    			
+			    		</div>
+			    		
+			    	</div>
+			    </div>
+		    </div>
+		    
+		</div>
+		<script src="../src/js/common/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/common/mui.pullToRefresh.js"></script>
+		<script src="../src/js/common/mui.pullToRefresh.material.js"></script>
 		<script src="../src/js/reset.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../src/js/import_news.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/import_news.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
