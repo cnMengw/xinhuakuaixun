@@ -205,7 +205,8 @@
 					"libs/home.html",
 					"src/js/common/jquery-2.1.0.min.js",
 					"src/js/common/mui.min.js",
-					"src/js/common/iconfont.min.js"
+					"src/js/common/iconfont.min.js",
+					"libs/设置@2x.png"
 				],
 				"refer": [
 					"libs/import_news.html",
@@ -225,6 +226,18 @@
 				"resources": [
 					"src/css/mui.min.css",
 					"src/css/reset.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"libs/market.html": {
+				"resources": [
+					"src/js/reset.min.js",
+					"src/css/mui.min.css",
+					"src/js/common/jquery-2.1.0.min.js",
+					"src/js/common/mui.min.js",
+					"assets/js/market.js",
+					"src/css/market.min.css"
 				],
 				"refer": [],
 				"priority": 0
