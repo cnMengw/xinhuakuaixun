@@ -1,0 +1,56 @@
+@import url('./reset.less');
+.mui-content{
+    background: @bg_color_white;
+    .title{
+        background: @bg_color_gray;
+        height: @width40;
+        span{
+            font-size: @font_size14;
+            line-height: @width40; 
+            text-indent: @width20;   
+        }
+    }
+    .zslist{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            height:.84rem;
+            padding: 0;
+            border-bottom: 1px solid @border_color_lightGray;
+            div{
+                padding-left: @padding20;
+                display: inline-block;
+                label{
+                    font-size: @font_size16;
+                    color: @font_color_black;
+                }
+                span{
+                    display: block;
+                    line-height: @width20;
+                }
+            }
+            div.zd{
+                padding-top: .18rem;
+                span{
+                    color: @font_color_gray;
+                    font-size: @font_size12;
+                }
+            }
+            div.range{
+                font-size: @font_size14;
+                margin-top: @margin20;
+            }
+            div.price{
+                margin-top: @margin30;
+            }
+        }
+    }
+}
+
+.down{
+    color: @font_color_green;
+}
+.up{
+    color: @font_color_red;
+}
