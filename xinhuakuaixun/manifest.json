@@ -229,7 +229,8 @@
 					"src/js/common/mui.pullToRefresh.js",
 					"src/css/import_news.min.css",
 					"src/js/import_news.js",
-					"src/img/test.png"
+					"src/img/test.png",
+					"src/js/import_news.min.js"
 				],
 				"refer": [],
 				"priority": 0

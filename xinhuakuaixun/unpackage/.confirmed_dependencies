@@ -47,7 +47,8 @@
 			"src/css/import_news.min.css",
 			"src/js/import_news.js",
 			"src/css/mui.min.css",
-			"src/img/test.png"
+			"src/img/test.png",
+			"src/js/import_news.min.js"
 		],
 		"refer": []
 	}
