@@ -3,7 +3,7 @@ mui.init()
 //	 监听plusReady事件
 if(window.plus) {
 	plusReady();
-} else {
+} else { 
 	document.addEventListener("plusready", plusReady, false);
 }
 
@@ -36,6 +36,8 @@ function plusReady() {
 			return
 		}
 		tabInit();
+		closeMenu();
+		openGesture();
 		if(tag == 'home.html'){
 			$('#kx').attr('xlink:href','#mui-icon-flash_active');
 			$('#header_title').html('快讯');
@@ -44,6 +46,7 @@ function plusReady() {
 			$('#yw').attr('xlink:href','#mui-icon-news_active');
 			$('#header_title').html('要闻');
 			$('#news_speech').css({'display':'none'});
+			closeGesture();
 		}else if(tag == 'market.html'){
 			$('#hq').attr('xlink:href','#mui-icon-market_active');
 			$('#header_title').html('行情');
