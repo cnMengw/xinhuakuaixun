@@ -12,12 +12,14 @@
 			"libs/home.html",
 			"src/js/common/jquery-2.1.0.min.js",
 			"src/js/common/mui.min.js",
-			"src/js/common/iconfont.min.js"
+			"src/js/common/iconfont.min.js",
+			"assets/js/gesture_slider.js"
 		],
 		"refer": [
 			"libs/import_news.html",
 			"libs/market.html",
-			"libs/home.html"
+			"libs/home.html",
+			"libs/mine.html"
 		]
 	},
 	"libs/home.html": {
@@ -51,5 +53,48 @@
 			"src/js/import_news.min.js"
 		],
 		"refer": []
+	},
+	"libs/news_detail.html": {
+		"resources": [
+			"src/fonts/mui.ttf",
+			"src/js/reset.min.js",
+			"src/css/mui.min.css",
+			"src/js/clipBoard.min.js",
+			"src/img/clipboardright@2x.png",
+			"src/img/notebtn@2x.png",
+			"src/js/news_detail.min.js",
+			"src/img/clipboardleft@2x.png",
+			"src/css/swiper.min.css",
+			"src/js/common/jquery-2.1.0.min.js",
+			"src/js/common/mui.min.js",
+			"src/img/test.png",
+			"src/js/common/swiper.min.js",
+			"src/css/news_detail.min.css",
+			"src/js/common/iconfont.min.js"
+		],
+		"refer": [
+			"libs/clip_edit.html",
+			"libs/finance.html"
+		]
+	},
+	"libs/clip_edit.html": {
+		"resources": [
+			"src/css/mui.min.css",
+			"src/css/clip_edit.min.css",
+			"src/js/clip_edit.min.js",
+			"src/img/dragupdown@2x.png",
+			"assets/js/clip_edit.js"
+		],
+		"refer": [
+			"libs/board_detail.html"
+		]
+	},
+	"libs/board_detail.html": {
+		"resources": [
+			"src/js/noteShare.min.js",
+			"src/js/board_detail.min.js",
+			"src/css/mui.min.css",
+			"src/css/board_detail.min.css"
+		]
 	}
 }

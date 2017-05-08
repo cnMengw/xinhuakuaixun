@@ -1,0 +1,132 @@
+@import url('./reset.less');
+html,body{
+    overflow: hidden;
+    background-color: #ffffff;
+    color: rgb(51,51,51);
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+header{
+    .mui-icon{
+        color: rgb(51,51,51);
+    }
+    svg{
+        width: @width20;
+        height: @width20;
+        margin-top:0.12rem;
+    }
+    #menu{
+        display: inline-block;
+        height: 100%;
+        img{
+            width: 0.18rem;
+            padding-top: 0.12rem;
+        }
+    }
+   
+    
+}
+.scon{
+    color: rgb(51,51,51);
+    font-size: 16px;
+}
+
+.mui-bar{
+    background-color:#ffffff ;
+    .mui-bar-nav{
+        box-shadow: none;
+        border-bottom: 1px solid rgb(229,229,229);
+    }
+}
+
+.con span{
+    font-size: 16px;
+    color: rgb(51,51,51);
+}
+.con .stime,.del,.dragbtn{
+    color: #CCCCCC;
+    opacity: 0;
+    display: none;
+}
+
+.mui-table-view .mui-table-view-cell{
+    text-align: left;
+    }
+.mui-table-view .mui-table-view-cell:last-child{
+    text-align: center;
+}
+
+/*.mui-table-view-cell img{width: 50px;vertical-align: middle;padding: 0 10px;}*/
+
+.mui-content{
+    padding: 0 20px;
+    background: #ffffff;
+}
+#current_title{
+    margin: 0;
+    font-size: 24px;
+    padding: 0.16rem 0;
+    line-height: 0.3rem;
+}
+#box li{
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.2px;
+}
+#meTalk{
+    /*border: 1px solid rgb(229,229,229);*/
+    padding: 0.12rem 0.16rem;
+    font-size: 16px;
+    line-height: 0.23rem;
+    margin: 0.2rem 0;
+}
+#meTalk p{
+    color: rgb( 59, 156, 254);
+    line-height: 0.17rem;
+    font-size: 14px;
+    font-weight: bold;
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#sharemenu ul{
+    background: #ffffff;
+    li{
+        width: 100%;
+        text-align: center;
+        svg{
+            width: 0.7rem;
+            height: 0.7rem;
+            margin: 0 auto;
+        }
+        a{
+            color: @font_color_black;
+        }
+        div{
+            width: 25%;
+            span{
+                display: block;
+                font-size:12px;
+                padding-top: 0.12rem;
+            }
+        }
+        img{
+            width: 0.7rem;
+            height: 0.7rem;
+        }
+    }
+    li:first-child{
+        padding: 29px 0;
+        height: 155px;
+        background: rgb(247,248,250);
+        border-bottom: 1px solid rgb(229,229,229);
+    }
+    li:last-child{
+        height: 62px;
+        line-height: 62px;
+    }
+}

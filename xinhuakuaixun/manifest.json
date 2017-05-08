@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "libs/home_page.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "libs/news_detail.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -101,7 +101,7 @@
         },
         "NativeObj":{
         	"description": "原生对象"
-        }
+        },"Share":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -205,11 +205,13 @@
 					"libs/home.html",
 					"src/js/common/jquery-2.1.0.min.js",
 					"src/js/common/mui.min.js",
-					"src/js/common/iconfont.min.js"
+					"src/js/common/iconfont.min.js",
+					"assets/js/gesture_slider.js"
 				],
 				"refer": [
 					"libs/import_news.html",
-					"libs/market.html"
+					"libs/market.html",
+					"libs/mine.html"
 				],
 				"priority": 0
 			},
@@ -248,6 +250,53 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"libs/news_detail.html": {
+				"resources": [
+					"src/fonts/mui.ttf",
+					"src/js/reset.min.js",
+					"src/css/mui.min.css",
+					"src/js/clipBoard.min.js",
+					"src/img/clipboardright@2x.png",
+					"src/img/notebtn@2x.png",
+					"src/js/news_detail.min.js",
+					"src/img/clipboardleft@2x.png",
+					"src/css/swiper.min.css",
+					"src/js/common/jquery-2.1.0.min.js",
+					"src/js/common/mui.min.js",
+					"src/img/test.png",
+					"src/js/common/swiper.min.js",
+					"src/css/news_detail.min.css",
+					"src/js/common/iconfont.min.js"
+				],
+				"refer": [
+					"libs/clip_edit.html",
+					"libs/finance.html"
+				],
+				"priority": 0
+			},
+			"libs/clip_edit.html": {
+				"resources": [
+					"src/css/mui.min.css",
+					"src/css/clip_edit.min.css",
+					"src/js/clip_edit.min.js",
+					"src/img/dragupdown@2x.png",
+					"assets/js/clip_edit.js"
+				],
+				"refer": [
+					"libs/board_detail.html"
+				],
+				"priority": 0
+			},
+			"libs/board_detail.html": {
+				"resources": [
+					"src/js/noteShare.min.js",
+					"src/js/board_detail.min.js",
+					"src/css/mui.min.css",
+					"src/css/board_detail.min.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
@@ -255,7 +304,6 @@
 				"src/css/common/mui.css",
 				"index.html",
 				"assets/js/reset.js",
-				"libs/mine.html",
 				"assets/less/home_page.less",
 				"assets/less/reset.less",
 				"src/js/common/mui.js"
