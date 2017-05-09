@@ -4,7 +4,7 @@ var showMenu = false,
 
 mui.init({
 	swipeBack: false,
-	beforeback: back 
+	beforeback: back
 });
 
 //plusReady事件后，自动创建menu窗口；
@@ -13,7 +13,7 @@ mui.plusReady(function() {
 	//setTimeout的目的是等待窗体动画结束后，再执行create webview操作，避免资源竞争，导致窗口动画不流畅；
 	setTimeout(function() {
 		menu = mui.preload({
-			id: 'mine', 
+			id: 'mine',
 			url: 'mine.html',
 			styles: {
 				right: "30%",
@@ -22,7 +22,6 @@ mui.plusReady(function() {
 			}
 		});
 	}, 300);
-	closeGesture();
 });
 
 function back() {
@@ -63,19 +62,22 @@ function openMenu() {
 		mask.show();
 		showMenu = true;
 	}
+	plus.webview.getWebviewById(tag).evalJS('openMask()');
 }
 
-function closeMenu() { 
+function closeMenu() {
 	//窗体移动
 	_closeMenu();
 	//关闭遮罩
 	mask.close();
+	plus.webview.getWebviewById(tag).evalJS('closeMask()');
 }
 
 /**
  * 关闭侧滑菜单(业务部分)
  */
 function _closeMenu() {
+	console.log('2');
 	if(showMenu) {
 		//解决android 4.4以下版本webview移动时，导致fixed定位元素错乱的bug;
 		if(mui.os.android && parseFloat(mui.os.version) < 4.4) {
@@ -98,7 +100,9 @@ function _closeMenu() {
 		}, 300);
 		showMenu = false;
 	}
+	plus.webview.getWebviewById(tag).evalJS('closeMask()');
 }
+
 //点击侧滑图标，打开侧滑菜单；
 document.querySelector('.mui-action-menu').addEventListener('tap', openMenu);
 //在android4.4中的swipe事件，需要preventDefault一下，否则触发不正常
@@ -110,7 +114,6 @@ window.addEventListener('dragleft', function(e) {
 	e.detail.gesture.preventDefault();
 });
 
-openGesture();
 function openGesture() {
 	//主界面向右滑动，若菜单未显示，则显示菜单；否则不做任何操作；
 	window.addEventListener("swipeleft", closeMenu);
@@ -128,3 +131,4 @@ function closeGesture() {
 	//menu页面向左滑动，关闭菜单；
 	window.addEventListener("menu:swipeleft", closeMenu);
 }
+

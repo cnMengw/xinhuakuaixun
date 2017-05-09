@@ -9,12 +9,14 @@ if(window.plus) {
 
 var wc = null;
 var ws;
+var tag;
+var self;
 
 //	底部导航的 页面切换
 function plusReady() {
 	plus.screen.lockOrientation('portrait-primary');
 	var subpage = ['home.html', 'import_news.html', 'market.html'];
-	var self = plus.webview.currentWebview();
+	self = plus.webview.currentWebview();
 	var index = 0;
 	var sub;
 	for(var i = 0; i < subpage.length; i++) {
@@ -30,8 +32,9 @@ function plusReady() {
 	};
 	//点击切换webview
 	var activeTab = subpage[index];
+	tag = 'home.html';
 	mui('.mui-bar-tab').on('tap', 'a', function(e) {
-		var tag = this.getAttribute('data');
+		tag = this.getAttribute('data');
 		if(tag == activeTab) {
 			return
 		}
@@ -79,7 +82,7 @@ function showSide() {
 	});
 	// 创建侧滑页面
 	plus.nativeUI.showWaiting();
-	wc = plus.webview.create("mine.html", "mine", {
+	wc = plus.webview.create("mine.html", "mine.html", {
 		right: "10%",
 		width: "90%",
 		popGesture: "none"
@@ -99,15 +102,19 @@ function showSide() {
 
 var first = null;
 mui.back = function() {
-	if(!first) {
-		first = new Date().getTime();
-		mui.toast('再按一次退出应用');
-		setTimeout(function() {
-			first = null;
-		}, 2000);
-	} else {
-		if(new Date().getTime() - first < 1000) {
-			plus.runtime.quit();
+	if(showMenu) {
+		closeMenu();
+	}else{
+		if(!first) {
+			first = new Date().getTime();
+			mui.toast('再按一次退出应用');
+			setTimeout(function() {
+				first = null;
+			}, 2000);
+		} else {
+			if(new Date().getTime() - first < 1000) {
+				plus.runtime.quit();
+			}
 		}
 	}
 }
