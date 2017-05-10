@@ -1,17 +1,133 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta charset="UTF-8">
-		<title>首页</title> 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="../src/css/mui.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../src/css/reset.min.css"/>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../src/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../src/css/reset.min.css" />
+		<link rel="stylesheet" type="text/css" href="../src/css/home.min.css" />
 	</head>
+
 	<body>
-		
+		<div class="mui-content">
+			<div class="mui-scroll2">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="aside_left mui-pull-left">
+							<p>14:31:08</p>
+						</div>
+						<div class="aside_right mui-pull-right">
+							<div class="mui-media-body">
+								<h4 class="list_title color indent">美国发大水发酵饲料看到发生了肯定放假啊深度克隆11111111</h4>
+								<div class="list_subtitle indent color">11111111111111111111111111111111111111111111111111111111</div>
+								<div class="show_more">
+									<p class="mui-pull-left list_more_left">
+										<span>展开</span>
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#mui-icon-down"></use>
+										</svg>
+									</p>
+									<p class="mui-pull-right list_more_right">
+										<span class="list_speech">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#mui-icon-speech_biger"></use>
+									</svg>
+								</span>
+										<span class="line_height"></span>
+										<span class="list_share">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#mui-icon-share_light"></use>
+									</svg>
+								</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="aside_left mui-pull-left">
+							<p>14:31:08</p>
+						</div>
+						<div class="aside_right mui-pull-right">
+							<div class="mui-media-body">
+								<h4 class="list_title indent">美国发大水发酵饲料看到发生了肯定放假啊深度克隆11111111</h4>
+								<div class="list_subtitle indent">11111111111111111111111111111111111111111111111111111111</div>
+								<div class="show_more">
+									<p class="mui-pull-left list_more_left">
+										<span>展开</span>
+										<svg class="icon icon_left" aria-hidden="true">
+											<use xlink:href="#mui-icon-down"></use>
+										</svg>
+									</p>
+									<p class="mui-pull-right list_more_right">
+										<span class="list_speech">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#mui-icon-speech_biger"></use>
+									</svg>
+								</span>
+										<span class="line_height"></span>
+										<span class="list_share">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#mui-icon-share_light"></use>
+									</svg>
+								</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 		<script src="../src/js/common/mui.js" type="text/javascript" charset="utf-8"></script>
-		<!--<script src="../src/js/mui.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../src/js/common/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/common/iconfont.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/common/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/common/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../src/js/reset.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../src/js/gesture_slider_home.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/home.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-scroll2'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										//	var ul = self.element.querySelector('.mui-table-view');
+										//	ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+										console.log('下拉刷新');
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										//	var ul = self.element.querySelector('.mui-table-view');
+										//	ul.appendChild(createFragment(ul, index, 5));
+										console.log('上拉加载刷新');
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});
+				});
+			})(mui);
+		</script>
 	</body>
+
 </html>

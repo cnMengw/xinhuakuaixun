@@ -4,7 +4,7 @@ var showMenu = false,
 
 mui.init({
 	swipeBack: false,
-	beforeback: back
+	beforeback: back 
 });
 
 //plusReady事件后，自动创建menu窗口；
@@ -16,8 +16,8 @@ mui.plusReady(function() {
 			id: 'mine',
 			url: 'mine.html',
 			styles: {
-				right: "30%",
-				width: '70%',
+				right: "20%",
+				width: '80%',
 				zindex: 9997
 			}
 		});
@@ -52,7 +52,7 @@ function openMenu() {
 		//显示完毕后，根据不同动画效果移动窗体；
 		menu.show('none', 0, function() {
 			menu.setStyle({
-				right: '30%',
+				right: '20%',
 				transition: {
 					duration: 150
 				}
@@ -72,12 +72,11 @@ function closeMenu() {
 	mask.close();
 	plus.webview.getWebviewById(tag).evalJS('closeMask()');
 }
-
+ 
 /**
  * 关闭侧滑菜单(业务部分)
  */
 function _closeMenu() {
-//	console.log('2');
 	if(showMenu) {
 		//解决android 4.4以下版本webview移动时，导致fixed定位元素错乱的bug;
 		if(mui.os.android && parseFloat(mui.os.version) < 4.4) {

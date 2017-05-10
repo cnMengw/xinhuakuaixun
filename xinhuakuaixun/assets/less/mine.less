@@ -1,0 +1,81 @@
+@import url('./reset.less'); 
+html{
+    widows: 100%;
+    height: 100%;   
+    body{
+        widows: 100%;
+        height: 100%;
+        .font(@font_size15);
+        .mui-content {
+            width: 100%;
+            height: 100%;
+            background: @border_navy_dark_blue; 
+            .content_header{
+                padding: 0 @padding15;
+                box-sizing: border-box; 
+                background: @bg_color_navy_dark_blue;
+                line-height: @line_height96; 
+                .color(@font_color_white);
+                img{ 
+                    display: inline-block;
+                    .width(0.5rem);
+                    .height(0.5rem);  
+                    vertical-align: middle;
+                    border-radius: 50%;
+                }
+            }
+        } 
+        .content_body{
+            .mui-table-view{
+                background-color: inherit;
+                &:before {
+                    height: 0;
+                }
+                &:after {
+                    height: 0;
+                }
+                .mui-table-view-cell.mui-active{
+                    background-color: inherit;
+                }
+                .mui-table-view-cell.font_set{
+                    .height(1.26rem);  
+                    .size_set{
+                        width: 2rem;
+                        margin: 0 auto;
+                        margin-top: 0.1rem;
+                       span{
+                           display: inline-block;
+                           background: @bg_color_navy_light_blue;
+                           width: 0.44rem;
+                           height: 0.44rem;
+                           line-height: 0.44rem;
+                           border-radius: 50%;
+                           text-align: center;
+                           margin-right: 0.3rem; 
+                       }
+                       .active{
+                           background: @bg_color_blue;
+                       }
+                       .big{
+                           margin: 0;
+                       }
+                   }
+                }
+                .mui-table-view-cell{
+                    .height(0.6rem);  
+                    line-height: 0.4rem;
+                    &:after {
+                        right: 15px;
+                        background-color:@border_navy_light_blue;
+                    }
+                    &:last-child:after{
+                        height: 1px;
+                    }
+                    .mui-col-xs-10 span{
+                        .color(@font_color_white);
+                    }
+                }
+            }
+        }
+    }
+}

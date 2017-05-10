@@ -2,6 +2,10 @@
 @bg_color:#f7f8fa;
 @bg_color_white:#fff;
 @bg_color_gray:rgb(247,248,250);
+@bg_color_blue:rgb(65,155,249);
+@bg_color_navy_blue:rgb(36,80,123);
+@bg_color_navy_dark_blue:rgb(36,80,123);
+@bg_color_navy_light_blue:rgb(71,96,122);
 @bg_color_opacity_block:rgba(48,48,48,0.8); 
 @bg_color_opacity_gray:rgba(170,170,170,0.5);
  
@@ -37,16 +41,20 @@
 @font_color_red:rgb(226,47,41);
 @font_color_white:rgb(255,255,255); 
 @font_color_black:rgb(51,51,51); 
+@font_color_red:rgb(226,47,41); 
 
 //边框颜色
 @border_color_gray:rgb(235,235,235);
 @border_color_lightGray:rgb(229,229,229);
 @border_color_bule:rgb(38,147,255);
+@border_navy_light_blue:rgb(71,96,122);
+@border_navy_dark_blue:rgb(21,54,88);
 
 //行高
 @line_height16:0.16rem;
 @line_height45:0.45rem;
 @line_height60:0.6rem;
+@line_height96:0.96rem;
 
 //padding
 @padding4:0.04rem;
@@ -69,8 +77,14 @@
 .font(@font:0.16rem){
     font-size: @font;
 } 
-.width(@width:1rem){
+.width(@width:1rem){ 
     width: @width;
+}
+.color(@color:@bg_color){ 
+    color: @color;
+}
+.height(@height:1rem){
+    height: @height;
 }
 .padding(@padding:0.1rem){
     padding: @padding;
@@ -87,6 +101,7 @@
 
 body,html{
     background: @bg_color_white; 
+    .font(); 
     header.mui-bar-nav{
         box-shadow: none;
         &:after{

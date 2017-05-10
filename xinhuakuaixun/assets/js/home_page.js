@@ -71,38 +71,10 @@ function tabInit(){
 	$('#hq').attr('xlink:href','#mui-icon-market');
 }
 
-//侧滑显示设置界面
-function showSide() {
-	if(wc) {
-		return;
-	}
-	// 开启遮罩
-	ws.setStyle({
-		mask: "rgba(0,0,0,0.5)"
-	});
-	// 创建侧滑页面
-	plus.nativeUI.showWaiting();
-	wc = plus.webview.create("mine.html", "mine.html", {
-		right: "10%",
-		width: "90%",
-		popGesture: "none"
-	});
-	// 侧滑页面关闭后关闭遮罩
-	wc.addEventListener('close', function() {
-		ws.setStyle({
-			mask: "none"
-		});
-		wc = null;
-	}, false);
-	// 侧滑页面加载后显示（避免白屏）
-	wc.addEventListener("loaded", function() {
-		wc.show("slide-in-left");
-	}, false);
-}
-
 var first = null;
 mui.back = function() {
 	if(showMenu) {
+		console.log('执行关闭蒙版');
 		closeMenu();
 	}else{
 		if(!first) {
