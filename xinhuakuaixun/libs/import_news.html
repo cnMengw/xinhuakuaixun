@@ -5,7 +5,7 @@
 		<title>要闻首页</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="../src/css/mui.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../src/css/reset.min.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../src/css/reset.min.css"/>-->
 		<link rel="stylesheet" type="text/css" href="../src/css/import_news.min.css"/>
 	</head>
 		
@@ -13,56 +13,62 @@
 		<div class="mui-content">
 		    <div id="slider" class="mui-slider mui-fullscreen">
 		    	<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-		    		<div class="mui-scroll marketControl">
-		    			<a class="mui-control-item mui-active" href="#item1">沪深</a>
-		    			<a class="mui-control-item" href="#item2">自选</a>
-		    			<a class="mui-control-item" href="#item3">新闻</a>
-		    			<a class="mui-control-item" href="#item4">公告</a>
-		    			<a class="mui-control-item" href="#item5">新闻</a>
-		    			<a class="mui-control-item" href="#item6">公告</a>
+		    		<div class="mui-scroll menuControl" id="menuControl">
+		    			<a class="mui-control-item mui-active" data="0" href="#item1">沪深</a>
+		    			<a class="mui-control-item" data="1" href="#item2">自选</a>
+		    			<a class="mui-control-item" data="2" href="#item3">新闻</a>
+		    			<a class="mui-control-item" data="3" href="#item4">公告</a>
+		    			<a class="mui-control-item" data="4" href="#item5">新闻</a>
+		    			<a class="mui-control-item" data="5" href="#item6">公告</a>
 		    		</div>
 		    	</div>
 		    	<div class="banner">
 		    		<div id="bannerslider" class="mui-slider" >
-						<div class="mui-slider-group mui-slider-loop">
+						<div class="mui-slider-group mui-slider-loop" id="banner_con">
 							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 							<div class="mui-slider-item mui-slider-item-duplicate">
-								<a href="#">
+								<a newsid="">
 									<img src="../src/img/test.png">
+									<p class="mui-slider-title">幸福就是可以一起睡觉</p>
 								</a>
 							</div>
 							<!-- 第一张 -->
 							<div class="mui-slider-item">
-								<a href="#">
+								<a >
 									<img src="../src/img/test.png">
+									<p class="mui-slider-title">幸福就是可以一起睡觉</p>
 								</a>
 							</div>
 							<!-- 第二张 -->
 							<div class="mui-slider-item">
-								<a href="#">
+								<a >
 									<img src="../src/img/test.png">
+									<p class="mui-slider-title">幸福就是可以一起睡觉</p>
 								</a>
 							</div>
 							<!-- 第三张 -->
 							<div class="mui-slider-item">
-								<a href="#">
+								<a >
 									<img src="../src/img/test.png">
+									<p class="mui-slider-title">幸福就是可以一起睡觉</p>
 								</a>
 							</div>
 							<!-- 第四张 -->
 							<div class="mui-slider-item">
-								<a href="#">
+								<a>
 									<img src="../src/img/test.png">
+									<p class="mui-slider-title">幸福就是可以一起睡觉</p>
 								</a>
 							</div>
 							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
 							<div class="mui-slider-item mui-slider-item-duplicate">
-								<a href="#">
+								<a >
 									<img src="../src/img/test.png">
+									<p class="mui-slider-title">幸福就是可以一起睡觉</p>
 								</a>
 							</div>
 						</div>
-						<div class="mui-slider-indicator">
+						<div class="mui-slider-indicator" id="banslider">
 							<div class="mui-indicator mui-active"></div>
 							<div class="mui-indicator"></div>
 							<div class="mui-indicator"></div>
@@ -70,12 +76,12 @@
 						</div>
 					</div>
 		    	</div>
-		    	<div class="mui-slider-group news">
+		    	<div class="mui-slider-group news" id="news">
 			    	<div id="item1" class="mui-slider-item mui-control-content mui-active">
 			    		<div id="scroll1" class="mui-scroll-wrapper">
 			    			<div class="mui-scroll">	
 			    				<ul class="mui-table-view">
-			    					<li class="mui-table-view-cell">
+			    					<li class="mui-table-view-cell" newsid="">
 			    						<img src="../src/img/test.png" class="newsimg"/>
 			    						<div class="mui-pull-right">
 			    							<h4>我们可以用CSS语法来控制超链接的形式、颜色变化。</h4>
@@ -158,10 +164,12 @@
 		<script src="../src/js/common/mui.pullToRefresh.js"></script>
 		<script src="../src/js/common/mui.pullToRefresh.material.js"></script>
 		<script src="../src/js/reset.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../src/js/import_news.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../src/js/import_news.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../assets/js/import_news.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/gesture_slider_home.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-//			mui.init();
 			mui("#bannerslider").slider({interval: 3000});
+		
 		</script>
 	</body>
 </html>

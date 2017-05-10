@@ -77,7 +77,7 @@ function closeMenu() {
  * 关闭侧滑菜单(业务部分)
  */
 function _closeMenu() {
-	console.log('2');
+//	console.log('2');
 	if(showMenu) {
 		//解决android 4.4以下版本webview移动时，导致fixed定位元素错乱的bug;
 		if(mui.os.android && parseFloat(mui.os.version) < 4.4) {

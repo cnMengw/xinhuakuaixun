@@ -73,6 +73,7 @@
 		}, function(e) {
 			plus.nativeUI.closeWaiting();
 			mui.toast("分享失败!");
+			alert(e.message)
 		});
 	}
 	

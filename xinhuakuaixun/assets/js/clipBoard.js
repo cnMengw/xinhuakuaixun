@@ -50,7 +50,7 @@ document.getElementById("edit").addEventListener("click",function(){
 	var neirong=JSON.stringify(clipContent.cuttext);
 	console.log(neirong);
 	var wv = plus.webview.create('clip_edit.html', 'clip_edit.html', {}, { 
-//		newsId: newsId, 
+//		newsId: newsid, 
 		news_title: $("#news_title h3").html(), 
 		clipContent:JSON.stringify(clipContent)
 	});

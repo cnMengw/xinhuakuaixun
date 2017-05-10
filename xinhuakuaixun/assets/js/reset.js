@@ -14,7 +14,6 @@
 
 //ajax请求
 function postServer(route, data, successfn, errorfn,errortype) {
-	console.log('请求url：' + XHCJ.postajax + route);
 	console.log('请求参数：' + JSON.stringify(data));
 	mui.ajax(XHCJ.postajax + route, {
 		data: JSON.stringify(data),

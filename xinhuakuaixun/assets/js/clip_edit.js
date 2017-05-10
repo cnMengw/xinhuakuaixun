@@ -14,12 +14,10 @@ if(window.plus) {
 } else {
 	document.addEventListener("plusready", plusReady, false);
 }
-var news_id;
-var news_title;
+var news_id,note_id;
 var clipContent;
 function plusReady(){
 	var self=plus.webview.currentWebview();
-	news_title=self.news_title;
 //	news_id=self.newsId;
 	clipContent=JSON.parse(self.clipContent);
 	console.log(clipContent);
@@ -45,52 +43,31 @@ function plusReady(){
 	}
 	
 	//点击进入下一级页面
-	var myClip;
-	var notecount=0;
 	document.getElementById("fixcon").addEventListener('tap', function() {
-//		localStorage.removeItem("myNotes");
+		plus.nativeUI.showWaiting();
 		var clonecon = $("#box").html();
-		var talk = document.getElementById("toSay").value;
-		var dT = new Date();
-		var datetime=dT.toLocaleString();
+		var mycomment = document.getElementById("toSay").value;
+		var param={
+			news_id:news_id,
+			mycomment:mycomment,
+			data_content:clonecon
+		};
+//		postServer("/api/v1/news/kx/focus/note/share",param,noteSfn);
+		setTimeout(function(){
+			var wv=plus.webview.create('board_detail.html', 'board_detail.html', {}, { 
+					noteId:note_id
+				});
+			wv.addEventListener('loaded', function() {
+				wv.show('slide-in-right');
+			}, false);
+		},500)
 		
-//		console.log("news_id是"+news_id+"talk是"+talk+"news_title是"+news_title);
-		if(localStorage.getItem("myNotes")){
-			myClip=JSON.parse(localStorage.getItem("myNotes"));
-			var s=myClip.noteId.length;
-			notecount=myClip.noteId[s-1]
-//			console.log(notecount);
-			myClip.noteId.push(notecount+1);
-			myClip.newsId.push(news_id);
-			myClip.newsTitle.push(news_title);
-			myClip.clipContent.push(clonecon);
-			myClip.myTalk.push(talk);
-			myClip.dateTime.push(datetime);
-		}else{
-			myClip={"noteId":[],"newsId":[],"newsTitle":[],"clipContent":[],"myTalk":[],"dateTime":[]};
-			myClip.noteId.push(notecount);
-			myClip.newsId.push(news_id);
-			myClip.newsTitle.push(news_title);
-			myClip.clipContent.push(clonecon);
-			myClip.myTalk.push(talk);
-			myClip.dateTime.push(datetime);
-		}
-		localStorage.setItem("myNotes",JSON.stringify(myClip));
-//		console.log(myClip);
-//		console.log(notecount);
-//		console.log(myClip.newsTitle);
-//		console.log(myClip.clipContent);
-//		console.log(myClip.myTalk);
-		
-		var wv=plus.webview.create('board_detail.html', 'board_detail.html', {}, { 
-				noteId: notecount+1
-			});
-		wv.addEventListener('loaded', function() {
-			wv.show('slide-in-right');
-		}, false);
-//		mui.toast('已生成新的文章');
 	});
 	
+}
+//生成笔记并获取noteID
+function noteSfn(data){
+	note_id=data.noteid;
 }
 //换位
 function getMousePos(e){ 
