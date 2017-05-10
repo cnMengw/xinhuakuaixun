@@ -1,0 +1,55 @@
+@import url('./reset.less');
+body,html{
+    background: #efeff4;
+}
+.mui-bar{
+    background: @bg_color_white;
+    .mui-icon{
+        color: rgb(51,51,51);
+    }
+}
+.mui-content{
+    .logo{
+        background: @bg_color_white;
+        text-align: center;
+        img{
+            margin-top: 0.6rem ;
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+        h4{
+
+            font-size: 0.2rem;
+            line-height: 0.3rem;
+            margin: 0.2rem auto;
+            color: @font_color_black;
+        }
+        p{
+            padding: 0 0.3rem;
+            text-align: left;
+            color: @font_color_black;
+            padding-bottom: 0.24rem;
+        }
+    }
+    .survey{
+        background: @bg_color_white;
+        margin-top: 0.08rem;
+        li{
+            list-style: none;
+            height: 0.58rem;
+            line-height: 0.58rem;
+            padding: 0 0.2rem;
+            font-size: 0.14rem;
+            color:@font_color_black ;
+            border-bottom: 1px solid @border_color_lightGray;
+            span{
+                color: @font_color_gray;
+            }
+            
+        }
+        
+    }
+}
+.mui-table-view:before{
+            height: 0;
+        }

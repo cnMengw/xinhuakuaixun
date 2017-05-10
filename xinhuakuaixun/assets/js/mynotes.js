@@ -5,18 +5,32 @@ if(window.plus) {
 	document.addEventListener("plusready", plusReady, false);
 }
 function plusReady(){
-	var self=plus.webview.currentWebview();
-	var current_id=self.newsId;
-	var noteData =JSON.parse(localStorage.getItem("myNotes"));
+	postServer("/api/v1/news/kx/focus/note/list",{},successfn);
+//	var self=plus.webview.currentWebview();
+//	var current_id=self.newsId;
+//	var noteData =JSON.parse(localStorage.getItem("myNotes"));
+//	var str="";
+//	for(var i=0;i<noteData.newsId.length;i++){
+//		str+="<li class='mui-table-view-cell'>";
+//		str+="<div class='mui-slider-right mui-disabled'><a class='mui-btn mui-btn-red' newsid='"+noteData.newsId[i]+"' noteid='"+noteData.noteId[i]+"'><span>删除</span></a></div>";
+//		str+="<div class='mui-slider-handle title' newsid='"+noteData.newsId[i]+"' noteid='"+noteData.noteId[i]+"'><div class='mui-media-body'>";
+//		str+="<span>"+noteData.newsTitle[i]+"</span>";
+//		str+="<p>"+noteData.dateTime[i]+"</p></div></div></li>"
+//	}
+	
+}
+function successfn(data){
 	var str="";
-	for(var i=0;i<noteData.newsId.length;i++){
+	for(var i=0;i<data.LIST.length;i++){
 		str+="<li class='mui-table-view-cell'>";
-		str+="<div class='mui-slider-right mui-disabled'><a class='mui-btn mui-btn-red' newsid='"+noteData.newsId[i]+"' noteid='"+noteData.noteId[i]+"'><span>删除</span></a></div>";
-		str+="<div class='mui-slider-handle title' newsid='"+noteData.newsId[i]+"' noteid='"+noteData.noteId[i]+"'><div class='mui-media-body'>";
-		str+="<span>"+noteData.newsTitle[i]+"</span>";
-		str+="<p>"+noteData.dateTime[i]+"</p></div></div></li>"
+		str+="<div class='mui-slider-right mui-disabled'><a class='mui-btn mui-btn-red' noteid='"+data.LIST[i].note_id+"'><span>删除</span></a></div>";
+		str+="<div class='mui-slider-handle title' noteid='"+data.LIST[i].note_id+"'><div class='mui-media-body'>";
+		str+="<span>"+data.LIST[i].title+"</span>";
+		str+="<p>"+data.LIST[i].create_time+"</p></div></div></li>"
 	}
+	
 	document.getElementById("news_title").innerHTML=str;
+	
 	var newsList=document.querySelectorAll(".title");
 	for(var i=0;i<newsList.length;i++){
 		newsList[i].addEventListener("tap",function(){
@@ -31,6 +45,7 @@ function plusReady(){
 		},false)
 	}
 	
+}
 	//删除菜单操作
 	mui('#news_title').on('tap',".mui-btn", function(event) {
 		var elem = this;
@@ -45,22 +60,25 @@ function plusReady(){
 				}, 0);
 			} else {
 				li.parentNode.removeChild(li);
-				for(j=0;j<noteData.noteId.length;j++){
-					if(delId==noteData.noteId[j]){
-						console.log(j);
-						noteData.noteId.splice(j,1);
-						noteData.newsId.splice(j,1);
-						noteData.newsTitle.splice(j,1);
-						noteData.clipContent.splice(j,1);
-						noteData.myTalk.splice(j,1);
-						noteData.dateTime.splice(j,1);
-					}
-				}
-				console.log(noteData.noteId);
-				
-				localStorage.setItem("myNotes",JSON.stringify(noteData));
-				console.log(localStorage.getItem("myNotes"))
+				postServer("POST /api/v1/news/kx/focus/note/delete",{note_id:delId},delSfn);
+//				for(j=0;j<noteData.noteId.length;j++){
+//					if(delId==noteData.noteId[j]){
+//						console.log(j);
+//						noteData.noteId.splice(j,1);
+//						noteData.newsId.splice(j,1);
+//						noteData.newsTitle.splice(j,1);
+//						noteData.clipContent.splice(j,1);
+//						noteData.myTalk.splice(j,1);
+//						noteData.dateTime.splice(j,1);
+//					}
+//				}
+//				console.log(noteData.noteId);
+//				
+//				localStorage.setItem("myNotes",JSON.stringify(noteData));
+//				console.log(localStorage.getItem("myNotes"))
 			}
 		},'div');
 	});
-}
+	function delSfn(data){
+		console.log(data.status.msg)
+	}
