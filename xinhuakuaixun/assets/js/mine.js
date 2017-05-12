@@ -8,12 +8,16 @@ mui.init({
 var main = null;
 mui.plusReady(function () {
 	main = plus.webview.currentWebview().opener();
+//	postServer("/api/v1/news/kx/focus/note/count",{},countFn);
 	plus.runtime.getProperty(plus.runtime.appid, function(wgtinfo) {
 		document.getElementById('version_num').innerHTML=wgtinfo.version;
 	});
 	getcalculate();
+	
 })
-
+function countFn(data){
+	document.getElementById("note_num").innerHTML=data.count;
+}
 function closeMenu () {
 	plus.webview.currentWebview().opener().evalJS('closeMenu()')
 }
@@ -114,3 +118,19 @@ document.getElementById('clear_cache').addEventListener('tap',function(){
 			return;
 		}
 },false)
+//笔记
+document.getElementById("note_set").addEventListener("tap",function(){
+	var wv=plus.webview.create("mynotes.html","mynotes.html");
+	plus.nativeUI.showWaiting();
+	wv.addEventListener("loaded",function(){
+		wv.show('slide-in-right');
+	},false)
+})
+//关于
+document.getElementById("introduce_project").addEventListener("tap",function(){
+	var wv=plus.webview.create("about_us.html","about_us.html");
+	plus.nativeUI.showWaiting();
+	wv.addEventListener("loaded",function(){
+		wv.show('slide-in-right');
+	},false)
+})

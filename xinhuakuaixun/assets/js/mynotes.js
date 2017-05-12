@@ -81,4 +81,5 @@ function successfn(data){
 	});
 	function delSfn(data){
 		console.log(data.status.msg)
+		mui.toast("删除成功");
 	}

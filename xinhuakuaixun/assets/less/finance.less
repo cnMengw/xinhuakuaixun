@@ -18,7 +18,7 @@
             p{
                 color: #FFFFFF;
                 line-height: 0.36rem;
-                font-size: 0.16rem;
+                font-size: 16px;
                 letter-spacing: 0.005rem;
             }
             p:last-child{
@@ -26,14 +26,96 @@
             }
         }
         .go{
-            padding-left: 0.22rem;
+            padding:0 6%;
+            font-weight: bold;
             a{
                 border-radius: 8px;
                 display: inline-block;
-                width: 42.7%;
+                width: 48%;
                 height: 0.5rem;
                 background: #FFFFFF;
+                line-height: 0.5rem;
+                font-size: 15px;
+                color: rgb(82,166,227);
+                svg{
+                    width: 0.22rem;
+                    height: 0.22rem;
+                    margin: 0.12rem 0.15rem;
+                    float: left;
+                }
             }
+            a:first-child{
+                margin-right: 2%;
+            }
+           
+            span{
+                color: rgb(82,166,227);
+                border-radius: 8px;
+                display: block;
+                width:100%;
+                height: 0.5rem;
+                background: #FFFFFF;
+                line-height: 0.5rem;
+                font-size: 15px;
+                text-indent: 0.52rem;
+                margin-top: 0.12rem;
+                svg{
+                    width: 0.22rem;
+                    height: 0.22rem;
+                    margin: 0.12rem 0.15rem;
+                    float: left;
+                }
+            }
+        }
+        h4{
+            padding: 0.3rem;
+            font-size: 16px;
+            font-weight: normal;
+            color: rgb(192,228,247);
+        }
+        img{
+            width: 80%;
+            height: auto;
+            margin: 0 10%;
+        }
+        .discript{
+           text-align: center;
+           padding-bottom: 0.54rem;
+            h5{
+                color: #FFFFFF;
+                font-size: 20px;
+                line-height: 0.3rem;
+            }
+            p{
+                color: #FFFFFF;
+                font-size: 14px;
+                opacity: 0.7;
+                line-height: 0.24rem;
+            }
+            
+        }
+    }
+     .survey{
+        background: @bg_color_white;
+        li{
+            list-style: none;
+            height: 0.58rem;
+            line-height: 0.58rem;
+            padding: 0 0.2rem;
+            font-size: 0.14rem;
+            color:@font_color_black ;
+            border-bottom: 1px solid @border_color_lightGray;
+            span{
+                color: @font_color_gray;
+            }
+            svg{
+                float: left;
+                width: 0.24rem;
+                height: 0.24rem;
+                margin-top: 0.17rem;
+                margin-right: 0.1rem;
+            }
+            
         }
         
     }

@@ -5,7 +5,12 @@ if(window.plus) {
 	document.addEventListener("plusready", plusReady, false);
 }
 var newsid;
+var sharUrl;
+var newsTitle;
 function plusReady(){
+	//分享调用
+	sharePlate();
+	
 	var self=plus.webview.currentWebview();
 	newsid=self.newsId;
 	var param={
@@ -15,6 +20,8 @@ function plusReady(){
 //	postServer("/api/v1/news/get",param,successfn);
 }
 function successfn(data){
+	sharUrl = data.share_url;
+	newsTitle = data.news_title;
 	var newsContent = data.data_content;
 	var isWebp = false;
 	var imgNewAdd = [];
@@ -101,3 +108,24 @@ document.getElementById("more").addEventListener("tap",function(){
 		wv.show('slide-in-right');
 	}, false);
 })
+document.getElementById('shareWxFriend').addEventListener('tap', function() {
+//	sharUrl="http://www.cnfic.com.cn/html/1//152/163/index.html";
+	console.log('分享得到的页面url为：' + sharUrl)
+	if(sharUrl) {
+		shareAction("weixin", "WXSceneSession", newsTitle, "", "", sharUrl)
+	} else {
+		plus.nativeUI.closeWaiting();
+		mui.toast("分享失败!");
+	}
+}, false);
+//朋友圈
+document.getElementById('shareWx').addEventListener('tap', function() {
+	console.log('分享得到的页面url为：' + sharUrl);
+//	sharUrl="http://www.cnfic.com.cn/html/1//152/163/index.html";
+	if(sharUrl) {
+		shareAction("weixin", "WXSceneTimeline", newsTitle, "", "", sharUrl)
+	} else {
+		plus.nativeUI.closeWaiting();
+		mui.toast("分享失败!");
+	}
+}, false);
