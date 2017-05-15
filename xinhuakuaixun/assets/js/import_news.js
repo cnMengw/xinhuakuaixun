@@ -11,8 +11,8 @@ function plusReady(){
 		page_num:"1",
 		page_size:"4"
 	};
-//	postServer("/api/v1/news/kx/focus/menu/list",{},menuSfn);
-//	postServer("/api/v1/news/kx/focus/list",bParam,bannerfn);
+	postServer("/api/v1/news/kx/focus/menu/list",{},menuSfn);
+	postServer("/api/v1/news/kx/focus/list",bParam,bannerfn);
 	
 	closeMainGes();
 }
@@ -24,17 +24,17 @@ $(function(){
 	};
 	postServer("/api/v1/news/kx/focus/list",bParam,bannerfn);
 	postServer("/api/v1/news/kx/focus/menu/list",{},menuSfn);
-	$.ajax({
-		type:"post",
-		url:"http://172.17.20.115/api/v1/news/kx/focus/menu/list",
-		async:true,
-		success:function(data){
-			console.log(data);
-		},
-		error:function(data){
-			console.log(data);
-		}
-	});
+//	$.ajax({
+//		type:"post",
+//		url:"http://172.17.20.115/api/v1/news/kx/focus/menu/list",
+//		async:true,
+//		success:function(data){
+//			console.log(data);
+//		},
+//		error:function(data){
+//			console.log(data);
+//		}
+//	});
 
 })
 function menuSfn(data){
@@ -48,9 +48,6 @@ function menuSfn(data){
 	}
 	document.getElementById("menuControl").innerHTML=menustr;
 	document.getElementById("news").innerHTML=sliderstr;
-	console.log(document.querySelector("a.mui-control-item").length)
-	document.querySelector("#menuControl")[0].classList.add("mui-active");
-	document.querySelector("#news .mui-slider-item")[0].classList.add("mui-active");
 	newsinit();
 }
 function bannerfn(data){
@@ -69,35 +66,40 @@ function bannerfn(data){
 	document.getElementById("banslider").iinnerHTML=banicon;
 }
 function newsinit(){
+//	document.querySelector("#menuControl")[0].classList.add("mui-active");
+//	document.querySelector("#news .mui-slider-item")[0].classList.add("mui-active");
 	
-	var classifyCode=document.querySelector("#menuControl .mui-active").getAttribute("data");
+	var classifyCode=document.querySelector("#menuControl .mui-active").getAttribute("datacode");
 	console.log(classifyCode);
 	var param={
 			classify_code:classifyCode,
-			page_num:1,
-			page_size:10
+			page_num:"1",
+			page_size:"10"
 		};
 	console.log(param);
-	plus.nativeUI.closeWaiting();
+//	plus.nativeUI.closeWaiting();
 	postServer("/api/v1/news/kx/focus/list",param,newsListFn);
 }
 document.querySelector('#slider').addEventListener('slide', function(event) {
 //	plus.nativeUI.showWaiting();
 	var eIndex=event.detail.slideNumber;
-	var classifyCode=document.querySelectorAll("#menuControl a")[eIndex].getAttribute("data");
+	var classifyCode=document.querySelectorAll("#menuControl a")[eIndex].getAttribute("datacode");
 	console.log(classifyCode);
 	var param={
 			classify_code:classifyCode,
-			page_num:1,
-			page_size:10
+			page_num:"1",
+			page_size:"10"
 		};
 	console.log(param);
 //	plus.nativeUI.closeWaiting();
-//	postServer("/api/v1/news/kx/focus/list",param,newsListFn);
+	postServer("/api/v1/news/kx/focus/list",param,newsListFn);
 })
 function newsListFn(data){
-	var resData=JSON.parse(data);
+	var resData=data;
 	var curitem=document.querySelector("#menuControl .mui-active").getAttribute("href");
+	console.log(curitem);
+	curitem=curitem.substring(1);
+	console.log(curitem);
 	var newsstr="<ul class='mui-table-view'>";
 	for(var i=0;i<resData.LIST.length;i++){
 		newsstr+="<li class='mui-table-view-cell' newsid='"+resData.LIST[i].news_id+"'>";
