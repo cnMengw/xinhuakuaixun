@@ -71,6 +71,14 @@ function tabInit(){
 	$('#hq').attr('xlink:href','#mui-icon-market');
 }
 
+//语音播报
+window.onload=function(){
+	document.getElementById("news_speech").addEventListener("tap", function(){
+		console.log(1);
+		plus.webview.getWebviewById('home.html').evalJS('speech_all()');
+	});
+}
+
 var first = null;
 mui.back = function() {
 	if(showMenu) {

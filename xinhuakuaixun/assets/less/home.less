@@ -78,71 +78,90 @@
 }
 
 //正文css
-.mui-table-view {
-    &:before {
-        height: 0;
+.mui-content {
+    .list_times{
+        text-align: center;
+        .font(0.14rem);
+        background: @bg_color_gray;
+        color: @font_color_gray;
+        position: fixed;
+        width: 100%;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        z-index: 2;
     }
-    &:after {
-        height: 0;
+    .pull_scroll{
+        padding-top: 0.3rem;
     }
-    .mui-table-view-cell.mui-active {
-        background-color: @bg_color_white;
-    }
-    .mui-table-view-cell {
-        padding-top: 0.12rem;
-        padding-bottom: 0.12rem;
-        padding-right: 0.28rem;
-        padding-left: 0.16rem;
+    .mui-table-view {
+        &:before {
+            height: 0;
+        }
         &:after {
-            left: 20%;
-            right: .28rem;
+            height: 0;
         }
-        &:last-child:after {
-            height: 1px;
+        .mui-table-view-cell.mui-active {
+            background-color: @bg_color_white;
         }
-        .aside_left {
-            width: 20%;
-        }
-        .aside_right {
-            width: 80%;
-            .mui-media-body {
-                .indent {
-                    word-wrap: break-word;
-                    text-align: justify;
-                    .font(0.16rem);
-                    margin: 0;
-                    line-height: 0.24rem;
+        .mui-table-view-cell {
+            padding-top: 0.12rem;
+            padding-bottom: 0.12rem;
+            padding-right: 0.28rem;
+            padding-left: 0.16rem;
+            &:after {
+                left: 0.80rem;
+                right: .28rem;
+            }
+            &:last-child:after {
+                height: 1px;
+            }
+            .aside_left {
+                width: 20%;
+                p{ 
+                    .font(0.14rem);
                 }
-                .color {
-                    color: @font_color_red;
-                }
-                svg {
-                    width: 0.2rem;
-                    height: 0.2rem;
-                    vertical-align: middle;
-                }
-                .list_subtitle {
-                    display: none;
-                }
-                .show_more {
-                    .list_more_left {
-                        padding-top: 0.10rem;
+            }
+            .aside_right {
+                width: 80%;
+                .mui-media-body {
+                    .indent {
+                        word-wrap: break-word;
+                        text-align: justify;
+                        .font(0.16rem);
+                        margin: 0;
+                        line-height: 0.24rem;
                     }
-                    .list_more_right {
-                        span {
-                            display: inline-block;
-                            padding-left: 0.15rem;
+                    .color {
+                        color: @font_color_red;
+                    }
+                    svg {
+                        width: 0.2rem;
+                        height: 0.2rem;
+                        vertical-align: middle;
+                    }
+                    .list_subtitle {
+                        display: none;
+                    }
+                    .show_more {
+                        .list_more_left {
                             padding-top: 0.10rem;
                         }
-                        .list_speech {
-                            padding-right: 0.15rem;
-                        }
-                        .line_height {
-                            width: 1px;
-                            height: 10px;
-                            vertical-align: middle;
-                            padding: 0;
-                            background: @border_color_lightGray;
+                        .list_more_right {
+                            span {
+                                display: inline-block;
+                                padding-left: 0.15rem;
+                                padding-top: 0.10rem;
+                            }
+                            .list_speech {
+                                padding-right: 0.15rem;
+                            }
+                            .line_height {
+                                width: 1px;
+                                height: 10px;
+                                vertical-align: middle;
+                                padding: 0;
+                                background: @border_color_lightGray;
+                            }
                         }
                     }
                 }
