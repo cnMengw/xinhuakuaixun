@@ -11,11 +11,12 @@
     setRem();
 //  console.log('rem执行完毕');
 })();
-
+var XHKX = {};
+XHKX.postajax='http://172.17.20.115';
 //ajax请求
 function postServer(route, data, successfn, errorfn,errortype) {
 	console.log('请求参数：' + JSON.stringify(data));
-	mui.ajax(XHCJ.postajax + route, {
+	mui.ajax('http://172.17.20.115' + route, {
 		data: JSON.stringify(data),
 		xhrFields: {
 			withCredentials: true
@@ -37,7 +38,7 @@ function postServer(route, data, successfn, errorfn,errortype) {
 				} else {
 					mui.alert(data.status.message,'温馨提示');
 				};
-				plus.nativeUI.closeWaiting();
+//				plus.nativeUI.closeWaiting();
 			};
 		},
 		error: function(xhr, type, errorThrown) {
